@@ -4,4 +4,4 @@ from .models import hello
 
 def hello_view(request):
     Halo = hello.objects.first()
-    return render(request, 'karyawan/hello.html', {'Message': Halo.pesan})
+    return render(request, 'karyawan/hello.html', {'pesan': Halo.pesan})
