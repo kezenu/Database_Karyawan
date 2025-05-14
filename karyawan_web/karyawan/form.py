@@ -18,7 +18,12 @@ class KaryawanForm(forms.ModelForm):
             "nomor_kk",
             "alamat_ktp",
             "alamat_tinggal",
-            "ibu_kandung",
+            "ibu",
             "nohp",
             "email",
         ]
+
+        def __init__(self, *args, **kwargs):
+            super().__init__(*args, **kwargs)
+            for field in self.fields.values():
+                field.widget.attrs['class'] = 'form-control'
