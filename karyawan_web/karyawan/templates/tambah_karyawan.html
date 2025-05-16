@@ -1,4 +1,3 @@
-{% load crispy_forms_tags %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,66 +10,95 @@
     <h2>Form Tambah Karyawan</h2>
     <form method="POST">
         {% csrf_token %}
-        {{ form|crispy }}
-        <div class="mb-3">
+        <div class="label">
             <label for="{{ form.id.id_for_label }}">Nomer Karyawan</label>
-           {{ form.id }}
+           <div class="input">
+               {{ form.id }}
+           </div>
         </div>
-        <div class="mb-3">
+        <div class="label">
             <label for="{{ form.nama.id_for_label }}">Nama</label>
-            {{ form.nama }}
+            <div class="ipnut">
+                {{ form.nama }}
+            </div>
         </div>
         <div class="mb-3">
             <label for="{{ form.jabatan.id_for_label }}">Jabatan</label>
-            {{ form.jabatan }}
+            <div class="ipnut">
+                {{ form.jabatan }}
+            </div>
         </div>
         <div class="mb-3">
             <label for="{{ form.lokasi.id_for_label }}">Lokasi</label>
-            {{ form.lokasi }}
+            <div class="ipnut">
+                {{ form.lokasi }}
+            </div>
         </div>
         <div class="mb-3">
             <label for="{{ form.nik.id_for_label }}">NIK</label>
-            {{ form.nik }}
+            <div class="ipnut">
+                {{ form.nik }}
+            </div>
         </div>
         <div class="mb-3">
             <label for="{{ form.pendidikan.id_for_label }}">Pendidikan Terakhir</label>
-            {{ form.pendidikan }}
+            <div class="ipnut">
+                {{ form.pendidikan }}
+            </div>
         </div>
         <div class="mb-3">
             <label for="{{ form.tempat_lahir.id_for_label }}">Tempat Lahir</label>
-            {{ form.tempat_lahir }}
+            <div class="ipnut">
+                {{ form.tempat_lahir }}
+            </div>
         </div>
         <div class="mb-3">
             <label for="{{ form.kelamin.id_for_label }}"> Jenis Kelamin</label>
-            {{ form.kelamin }}
+            <div class="ipnut">
+                {{ form.kelamin }}
+            </div>
         </div>
         <div class="mb-3">
             <label for="{{ form.status.id_for_label }}">Status</label>
-            {{ form.status }}
+            <div class="ipnut">
+                {{ form.status }}
+            </div>
         </div>
         <div class="mb-3">
             <label for="{{ form.nomor_kk.id_for_label }}">Nomer Kartu Keluarga</label>
-            {{ form.nomor_kk }}
+            <div class="ipnut">
+                {{ form.nomor_kk }}
+            </div>
         </div>
         <div class="mb-3">
             <label for="{{ form.alamat_ktp.id_for_label }}">Alamat Sesuai KTP</label>
-            {{ form.alamat_ktp }}
+            <div class="ipnut">
+                {{ form.alamat_ktp }}
+            </div>
         </div>
         <div class="mb-3">
             <label for="{{ form.alamat_tinggal.id_for_label }}">Alamat Sesuai Tempat Tinggal/Domisili</label>
-            {{ form.alamat_tinggal }}
+            <div class="ipnut">
+                {{ form.alamat_tinggal }}
+            </div>
         </div>
         <div class="mb-3">
             <label for="{{ form.ibu.id_for_label }}">Nama Ibu Kandung</label>
-            {{ form.ibu }}
+            <div class="ipnut">
+                {{ form.ibu }}
+            </div>
         </div>
         <div class="mb-3">
             <label for="{{ form.nohp.id_for_label }}">No. Handphone</label>
-            {{ form.nohp }}
+            <div class="ipnut">
+                {{ form.nohp }}
+            </div>
         </div>
         <div class="mb-3">
             <label for="{{ form.email.id_for_label }}">Email</label>
-            {{ form.email }}
+            <div class="ipnut">
+                {{ form.email }}
+            </div>
         </div>
         <button type="submit">Simpan</button>
     </form>

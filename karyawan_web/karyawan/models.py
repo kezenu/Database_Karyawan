@@ -16,8 +16,7 @@ class Karyawan(models.Model):
         ("Direktur", "Direktur"),
         ("Direktur Keuangan", "Direktur Keuangan"),
         ("Manager Operasional", "Manager Operasional"),
-        ("Koordinator Lapangan", "Koordinator Lapangan")
-    ]
+        ("HRD", "HRD")]
 
     pilihan_sertifikat = [
         ("Gada Pratama", "Gada Pratama"),
