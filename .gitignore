@@ -1,1 +1,25 @@
+# Virtual environment
 env/
+
+# Byte-compiled / cache files
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Django SQLite database file
+db.sqlite3
+
+# Django migrations (opsional, kadang disimpan, kadang tidak)
+*/migrations/__pycache__/
+*.log
+
+# VSCode and PyCharm settings
+.vscode/
+.idea/
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Environment variable files
+.env

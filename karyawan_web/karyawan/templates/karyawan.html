@@ -1,35 +1,48 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Daftar Karyawan</title>
+    <link rel="stylesheet" href="{% static 'karyawan.css' %}">
 </head>
 <body>
     <h1>Daftar Karyawan Aktif</h1>
-    <table border="1" cellpadding="8">
-        <thead>
-            <tr>
-                <th> ID</th>
-                <th> Nama </th>
-                <th> Jabatan</th>
-                <th> Lokasi</th>
-            </tr>
-        </thead>
-        <tbody>
-            {% for karyawan in karyawan_list %}
-            <tr>
-                <td>{{ forloop.counter }}</td>
-                <td>{{ karyawan.nama }}</td>
-                <td>{{ karyawan.jabatan }}</td>
-                <td>{{ karyawan.lokasi }}</td>
-            </tr>
-            {% empty %}
-        </tr>
-            <td colspan="4"> Belum Ada Data Karyawan</td>
-        <tr>
-            {% endfor %}
-        </tbody>
-    </table>
+    <div class="home">
+        <div class="sidebar">
+            <ul>
+                <li> Tambah Karyawan </li>
+                <li> Pindah Lokasi Karyawan </li>
+                <li> Hapus Karyawan </li>
+            </ul>
+        </div>
+        <div class="daftar">
+            <table border="1" cellpadding="8">
+                <thead>
+                    <tr>
+                        <th> ID</th>
+                        <th> Nama </th>
+                        <th> Jabatan</th>
+                        <th> Lokasi</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for karyawan in karyawan_list %}
+                    <tr>
+                        <td>{{ forloop.counter }}</td>
+                        <td>{{ karyawan.nama }}</td>
+                        <td>{{ karyawan.jabatan }}</td>
+                        <td>{{ karyawan.lokasi }}</td>
+                    </tr>
+                    {% empty %}
+                </tr>
+                <td colspan="4"> Belum Ada Data Karyawan</td>
+                <tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
 </body>
 </html>

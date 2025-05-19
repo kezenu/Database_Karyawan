@@ -72,7 +72,7 @@ TEMPLATES = [
 
 CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
 CRISPY_TEMPLATE_PACK = "bootstrap5"
-
+STATIC_URL = '/static/'
 
 WSGI_APPLICATION = 'karyawan_web.wsgi.application'
 
