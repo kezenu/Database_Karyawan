@@ -24,6 +24,7 @@ body h1{
 
 .sidebar ul li{
     list-style: none;
+    padding: 10px;
 }
 
 .daftar {
