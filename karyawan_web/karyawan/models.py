@@ -44,6 +44,7 @@ class Karyawan(models.Model):
     lokasi = models.CharField(max_length=40)
     nik = models.CharField(max_length=16, unique=True)
     pendidikan = models.CharField(max_length=100, choices=pilihan_pendidikan)
+    tanggal_lahir = models.DateField()
     tempat_lahir = models.CharField(max_length=100)
     kelamin = models.CharField(max_length=15, choices=pilihan_jk)
     status = models.CharField(max_length=5, choices=pilihan_status)
