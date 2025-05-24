@@ -6,7 +6,10 @@
     <title>Penambahan karyawan</title>
 </head>
 <body>
-    {% csrf_token %}
-    
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type=submit> Lanjut</button>
+    </form>
 </body>
 </html>

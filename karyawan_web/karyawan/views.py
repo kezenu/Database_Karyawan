@@ -1,21 +1,23 @@
 from django.shortcuts import render, redirect
-from .form import KaryawanForm
-from .models import Karyawan
-
+from .form import step1
 # Create your views here.
 
 
-def tambah_karyawan(request):
-    if request.method == "POST":
-        form = KaryawanForm(request.POST)
+def tambah1(request):
+    if request.method == 'POST':
+        form = step1(request.POST)
         if form.is_valid():
-            form.save()
-            return redirect("/")
-    else:
-        form = KaryawanForm()
-    return render(request, "tambah_karyawan.html", {"form": form})
+            cleaned_data = form.cleaned_data
+            cleaned_data['tanggal_lahir'] = cleaned_data['tanggal_lahir'].isoformat()
+            request.session['step1'] = cleaned_data
+            return redirect('tambah2')
+    form = step1()
+    return render(request, 'tambah1.html', {'form': form})
 
 
-def daftar_karyawan(request):
-    semua_karyawan = Karyawan.objects.all()
-    return render(request, 'karyawan.html', {'karyawan_list': semua_karyawan})
+def tambah2(request):
+    data1 = request.session.get('step1')
+    if not data1:
+        return redirect('step1')
+    if data1:
+        return render(request, 'tambah2.html', {'data1': data1})
