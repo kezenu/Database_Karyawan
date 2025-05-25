@@ -82,8 +82,12 @@ WSGI_APPLICATION = 'karyawan_web.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'datakaryawan',
+        'USER': 'kezenu',
+        'PASSWORD': 'kezenu69',
+        'HOST': 'localhost',
+        'PORT': '5432'
     }
 }
 
