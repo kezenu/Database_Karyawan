@@ -7,11 +7,16 @@
 </head>
 <body>
     <ul>
+        
         <li>Nama: {{data1.nama}}</li>
         <li>Tanggal Lahir: {{data1.tanggal_lahir}}</li>
         <li>NIK: {{data1.NIK}}</li>
         <li>No Handphone: {{data1.no_hp}}</li>
         <li>Email: {{data1.email}}</li>
     </ul>
+    <form method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+    </form>
 </body>
 </html>

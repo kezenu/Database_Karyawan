@@ -1,9 +1,17 @@
 from django import forms
+from .models import Karyawan
 
 
-class step1(forms.Form):
-    nama = forms.CharField(max_length=100, label='Nama Lengkap')
-    tanggal_lahir = forms.DateField(widget=forms.DateInput(attrs={'type': 'date'}), label='Tanggal Lahir (17-08-1945)')
-    nik = forms.CharField(min_length=16, max_length=16, label='NIK KTP')
-    no_hp = forms.CharField(max_length=13, min_length=10, label="Nomer Handphone")
-    email = forms.EmailField(label='Email')
+class Step1Form(forms.ModelForm):
+    class Meta:
+        model = Karyawan
+        fields = ['nama', 'tanggal_lahir', 'nik', 'no_hp', 'email']
+        widgets = {
+            'tanggal_lahir': forms.DateInput(attrs={'type': 'date'})
+        }
+
+
+class Step2Form(forms.ModelForm):
+    class Meta:
+        model = Karyawan
+        fields = ['jabatan', 'pendidikan', 'lokasi', 'kelamin']
